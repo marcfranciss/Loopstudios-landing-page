@@ -13,7 +13,7 @@ $mobile: 30rem
     @else if $size == mobile
         @media (min-width: 30rem)
             @content
-    @else if $size == dekstop
+    @else if $size == desktop
         @media (min-width: 68rem)
             @content
 
@@ -44,8 +44,8 @@ $mobile: 30rem
 
 @keyframes slideLeft
     from
+        transform: translateX(-100%)
+        opacity: 0
+    to
         transform: translateX(0%)
         opacity: 1
-    to
-        transform: translateX(-50%)
-        opacity: 0

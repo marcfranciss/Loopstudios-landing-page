@@ -3,7 +3,37 @@
 .navMobile-container
     @include breakpoint(tablet)
         display: none
-.btn-burger
+.btn-burger, .btn-close
     all: unset
     background: transparent
     cursor: pointer
+
+#nav-mobile
+    background-color: hsl(0, 0%, 0%)
+    outline: none
+    border: none
+    min-height: 100vh
+    min-width: 100vw
+    position: fixed
+    top: 0
+    left: 0
+    animation: slideLeft 0.7s forwards
+    header
+        position: relative
+    .nav-links
+        position: relative
+        padding-inline: 1.5rem
+        display: flex
+        flex-direction: column
+        margin-top: 159px
+        gap: 1.5rem
+        a
+            text-decoration: none
+            color: hsl(0, 0%, 100%)
+            text-transform: uppercase
+            font-family: "Josefin Sans"
+            font-size: 1.5rem
+            line-height: 25px
+            font-weight: 300
+            &:hover, &:active, &:focus
+                font-weight: 400
