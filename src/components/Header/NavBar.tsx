@@ -1,8 +1,12 @@
 import "./navBar.sass";
 
-export const NavBar = () => {
+interface NavBarProps {
+  id?: string;
+  className?: string;
+}
+export const NavBar = ({ id, className }: NavBarProps) => {
   return (
-    <nav id='nav-main'>
+    <nav id={id} className={className}>
       <a href='#about'>about</a>
       <a href='#careers'>careers</a>
       <a href='#events'>events</a>

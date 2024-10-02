@@ -1,0 +1,126 @@
+@use "../../sass/_index" as *
+
+#s-creations
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    .s-creation__header
+        display: flex
+        flex-direction: row
+        margin-bottom: 3.5rem
+
+        @include breakpoint(tablet)
+            width: 100%
+            align-items: flex-start
+            justify-content: space-between
+            margin-bottom: 5rem
+
+        h2
+            font-family: "Josefin Sans", sans-serif
+            text-align: center
+            text-transform: uppercase
+            font-weight: 300
+            font-size: 2rem
+            line-height: 2rem
+            color: $secondary
+
+        button
+            display: none
+            @include breakpoint(tablet)
+                display: flex
+
+    .cards-list
+        width: 100%
+        display: flex
+        flex-direction: column
+        gap: 1.5rem
+        margin-bottom: 34px
+
+        @include breakpoint(tablet)
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            grid-template-rows: repeat(2, 1fr)
+            gap: 30px
+            margin-bottom: 0
+
+        .card
+            height: 120px
+            display: flex
+            flex-direction: column
+            justify-content: flex-end
+            padding: 20px
+            background-position: center
+            background-size: cover
+            background-repeat: no-repeat
+            position: relative
+
+            @include breakpoint(tablet)
+                height: 460px
+                cursor: pointer
+                &:hover::before
+                    background: hsla(0, 0%, 100%, 75.07%)
+                    transition: 0.4s ease
+                &:hover p
+                    color: $secondary
+                    transition: 0.4s ease
+                    cursor: pointer
+            @include breakpoint(desktop)
+                padding-inline: 2.5rem
+                padding-block: 2rem
+
+            &::before
+                content: ""
+                position: absolute
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+                background: linear-gradient(hsla(0, 0%, 100%, 0%), hsla(0, 0%, 0%, 60%))
+
+            p
+                font-family: "Josefin Sans", sans-serif
+                max-width: 8ch
+                text-transform: uppercase
+                font-weight: 300
+                font-size: 1.5rem
+                line-height: 1.5rem
+                color: $primary
+                z-index: 1
+
+    & button
+        @include breakpoint(tablet)
+            display: none
+
+.card:nth-child(1)
+    background-image: url("../../assets/images/mobile/image-deep-earth.jpg")
+    @include breakpoint(tablet)
+        background-image: url("../../assets/images/desktop/image-deep-earth.jpg")
+.card:nth-child(2)
+    background-image: url("../../assets/images/mobile/image-night-arcade.jpg")
+    @include breakpoint(tablet)
+        background-image: url("../../assets/images/desktop/image-night-arcade.jpg")
+.card:nth-child(3)
+    background-image: url("../../assets/images/mobile/image-soccer-team.jpg")
+    @include breakpoint(tablet)
+        background-image: url("../../assets/images/desktop/image-soccer-team.jpg")
+.card:nth-child(4)
+    background-image: url("../../assets/images/mobile/image-grid.jpg")
+    @include breakpoint(tablet)
+        background-image: url("../../assets/images/desktop/image-grid.jpg")
+.card:nth-child(5)
+    background-image: url("../../assets/images/mobile/image-from-above.jpg")
+    @include breakpoint(tablet)
+        background-image: url("../../assets/images/desktop/image-from-above.jpg")
+.card:nth-child(6)
+    background-image: url("../../assets/images/mobile/image-pocket-borealis.jpg")
+    @include breakpoint(tablet)
+        background-image: url("../../assets/images/desktop/image-pocket-borealis.jpg")
+.card:nth-child(7)
+    background-image: url("../../assets/images/mobile/image-curiosity.jpg")
+    @include breakpoint(tablet)
+        background-image: url("../../assets/images/desktop/image-curiosity.jpg")
+.card:nth-child(8)
+    background-image: url("../../assets/images/mobile/image-fisheye.jpg")
+    @include breakpoint(tablet)
+        background-image: url("../../assets/images/desktop/image-fisheye.jpg")

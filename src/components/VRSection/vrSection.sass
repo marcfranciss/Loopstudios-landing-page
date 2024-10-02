@@ -1,8 +1,50 @@
 @use "../../sass/_index" as *
 
 #s-vr
-    padding-block: 6rem
+    padding: 0
+.s-vr-container
+    margin-block: 6rem
+    margin-inline: 1.5rem
+    margin-bottom: clamp(6rem, 4.0634rem + 8.2629vw, 11.5rem)
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
+    gap: 3rem
+    .vr-text
+        display: flex
+        flex-direction: column
+        gap: 1rem
+        text-align: center
+        & h2
+            text-transform: uppercase
+            font-family: "Josefin Sans", sans-serif
+            font-weight: 300
+            font-size: 2rem
+            line-height: 2rem
+            color: $secondary
+        & p
+            font-family: "Alata", system-ui
+            font-weight: 400
+            font-size: 15px
+            line-height: 25px
+            color: hsla(0, 0%, 0%, 50%)
+
+@include breakpoint(desktop)
+    .s-vr-container
+        position: relative
+        align-items: flex-start
+        margin-inline: 165px
+        .vr-image
+            width: 731px
+            height: 500px
+        .vr-text
+            position: absolute
+            right: 0
+            bottom: 0
+            width: 541px
+            height: 317px
+            background-color: $primary
+            padding-top: 6rem
+            padding-left: 6rem
+            text-align: left

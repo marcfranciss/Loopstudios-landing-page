@@ -7,7 +7,7 @@ export const Header = () => {
   return (
     <header>
       <Logo />
-      <NavBar />
+      <NavBar id='nav-main' className='nav-main' />
       <NavBarMobile />
     </header>
   );

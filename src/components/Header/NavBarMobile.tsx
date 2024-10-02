@@ -6,12 +6,21 @@ import { useState } from "react";
 
 export const NavBarMobile = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleDialogOpen = () => {
+    setIsOpen(!isOpen);
+    if (!isOpen) {
+      document.body.classList.add("dialog-open");
+    } else {
+      document.body.classList.remove("dialog-open");
+    }
+  };
   return (
     <div className='navMobile-container'>
       <button
         type='button'
         className='btn-burger'
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={handleDialogOpen}
         aria-controls='nav-mobile'
         aria-expanded={isOpen}
         aria-label='Navbar toggler'>
@@ -27,7 +36,7 @@ export const NavBarMobile = () => {
           <button
             type='button'
             className='btn-close'
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={handleDialogOpen}
             aria-controls='nav-mobile'
             aria-expanded={isOpen}
             aria-label='Navbar toggler'>

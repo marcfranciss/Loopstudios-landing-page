@@ -7,19 +7,20 @@
     background-size: cover
     min-height: 100vh
     display: flex
-    justify-content: center
-    align-items: center
+    padding-top: 227px
+    padding-bottom: 227px
     @include breakpoint(desktop)
         justify-content: flex-start
+        padding-bottom: 146px
         background-image: url("../../assets/images/desktop/image-hero.jpg")
 .hero-text
     border: 2px solid hsl(0, 0%, 100%)
     padding: 1.5rem
-    max-width: 650px
+    max-width: 450px
     max-height: 278px
-    padding-inline: 1.5rem
     @include breakpoint(desktop)
         padding: 2.5rem
+        max-width: 650px
     h1
         text-transform: uppercase
         font-family: "Josefin Sans", sans-serif

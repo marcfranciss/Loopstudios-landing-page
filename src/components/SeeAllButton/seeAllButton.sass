@@ -1,0 +1,49 @@
+@use "../../sass/_index" as *
+
+.btn-see-all
+    width: 157px
+    height: 40px
+    display: flex
+    justify-content: center
+    align-items: center
+    text-transform: uppercase
+    font-size: 14px
+    line-height: 14px
+    font-family: "Alata"
+    letter-spacing: 5px
+    color: $secondary
+    background: transparent
+    border: 1px solid $secondary
+    transition: 0.4s ease
+    cursor: pointer
+    position: relative
+    overflow: hidden
+    &::before
+        content: "SEE ALL"
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        display: grid
+        place-items: center
+        animation: bgSlideOff 0.4s forwards
+        background-color: $secondary
+        color: $primary
+    &:hover::before
+        animation: bgSlide 0.4s forwards
+    &:active
+        transform: scale(0.95)
+
+@keyframes bgSlide
+    0%
+        left: -100%
+    100%
+        left: 0
+@keyframes bgSlideOff
+    0%
+        left: 0
+        width: 0
+    100%
+        width: 0
+        left: -100%
